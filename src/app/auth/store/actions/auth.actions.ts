@@ -1,6 +1,6 @@
+import { IRegisterRequest } from './../../types/register-request.interface';
 import { BackendErrorsInterface } from './../../../shared/types/backend-errors.interface';
 import { CurrentUserInterface } from './../../../shared/types/current-user.interface';
-import { RegisterRequestInterface } from './../../types/register-request.interface';
 
 import { Action } from '@ngrx/store';
 import { authActionTypes } from '../enums/auth.enum';
@@ -8,7 +8,7 @@ import { authActionTypes } from '../enums/auth.enum';
 export class signUp implements Action {
     readonly type = authActionTypes.SIGN_UP;
   
-    constructor(public payload: RegisterRequestInterface) {}
+    constructor(public payload: IRegisterRequest) {}
 }
   
 export class signUpSuccess implements Action {

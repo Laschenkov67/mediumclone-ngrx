@@ -1,5 +1,5 @@
 import { CurrentUserInterface } from './../../shared/types/current-user.interface';
 
-export interface authResponseInterface {
+export interface IAuthResponse {
   user: CurrentUserInterface;
 }

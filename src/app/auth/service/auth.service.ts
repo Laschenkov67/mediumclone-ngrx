@@ -1,9 +1,9 @@
+import { IRegisterRequest } from './../types/register-request.interface';
+import { IAuthResponse } from './../types/auth-response.interface';
 import { environment } from './../../../environments/environment';
 import { CurrentUserInterface } from './../../shared/types/current-user.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RegisterRequestInterface } from '../types/register-request.interface';
-import { authResponseInterface } from '../types/auth-response.interface';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators'
 
@@ -15,10 +15,10 @@ import {map} from 'rxjs/operators'
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  register(data: RegisterRequestInterface): Observable<CurrentUserInterface> {
+  signUp(data: IRegisterRequest): Observable<CurrentUserInterface> {
     const url = environment.apiUrl + '/users'
     return this.http
-      .post<authResponseInterface>(url, data)
-      .pipe(map((response: authResponseInterface) => response.user))
+      .post<IAuthResponse>(url, data)
+      .pipe(map((response: IAuthResponse) => response.user))
   }
 }

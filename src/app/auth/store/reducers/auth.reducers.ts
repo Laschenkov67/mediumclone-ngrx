@@ -1,9 +1,9 @@
-import { AuthStateInterface } from '../../types/auth-state.interface';
+import { IAuthState } from './../../types/auth-state.interface';
 import { authActionTypes } from '../enums/auth.enum';
 import { AuthActions } from '../actions/auth.actions';
 
 //Задаем начальные значения
-const initialState: AuthStateInterface = {
+const initialState: IAuthState = {
     isSubmitting: false,
     currentUser: null,
     validationErrors: null,
